@@ -11,4 +11,3 @@ def islower(c):
     """
     # Check the ASCII value of c
     return ord('a') <= ord(c) <= ord('z')
-    
