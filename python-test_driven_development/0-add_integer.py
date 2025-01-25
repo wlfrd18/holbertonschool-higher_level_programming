@@ -25,6 +25,8 @@ def add_integer(a, b=98):
 
     if type(b) not in (int, float):
         raise TypeError('b must be an integer')
+    
+   
 
     a = convert_to_int(a)
     b = convert_to_int(b)
@@ -47,4 +49,5 @@ def convert_to_int(num):
         num = int(num)
         return num
 
-    return num
+    if type(num) not in (float, int)
+        raise ValueError('cannot convert float NaN to integer')
