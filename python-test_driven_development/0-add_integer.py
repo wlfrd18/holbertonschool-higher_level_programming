@@ -49,5 +49,3 @@ def convert_to_int(num):
         num = int(num)
         return num
 
-    if type(num) not in (float, int)
-        raise ValueError('cannot convert float NaN to integer')
