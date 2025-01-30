@@ -9,8 +9,8 @@ This module creates a new class Square
 class Square:
     """ __init__ method class """
     def __init__(self, size=0, position=(0, 0)):
-            self.__size = size
-            self.position = position
+        self.__size = size
+        self.position = position
 
     def area(self):
         """ Return the area of square """
@@ -24,7 +24,7 @@ class Square:
     @size.setter
     def size(self, value):
         """ Set the size of square """
-        if (type(value) != int):
+        if (type(value) is not int):
             raise ValueError('size must be an integer')
         elif value < 0:
             raise ValueError('size must be >= 0')
