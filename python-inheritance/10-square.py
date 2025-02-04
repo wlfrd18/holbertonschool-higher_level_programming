@@ -8,7 +8,7 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     """Square class
-    
+
     Arguments:
         Rectangle -> Parent class
     """
