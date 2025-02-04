@@ -1,19 +1,16 @@
 #!/usr/bin/python3
-
-
 """
-This module creates a new MyList Class
+    Module that creates lookup function
 """
 
 
-class MyList(list):
-    """My List class
+def lookup(obj):
+    """ Lookup Function
 
     Arguments:
-        list --
+        obj parameter
+
+    Returns:
+        dir(ob) -> Attributes of the obj
     """
-    def print_sorted(self):
-        """
-        Function that print a sorted list
-        """
-        print(sorted(self))
+    return dir(obj)
