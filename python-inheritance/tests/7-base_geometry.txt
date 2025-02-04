@@ -60,6 +60,14 @@ testing integer_validator method with TypeError list
 ...     print(err)
 x must be an integer
 
+testing integer_validator method with TypeError boolean
+::
+>>> try:
+...     bg.integer_validator("x", True)
+... except Exception as err:
+...     print(err)
+
+
 testing integer_validator method with TypeError set
 ::
 >>> try:
@@ -84,21 +92,6 @@ testing integer_validator method with ValueError zero
 ...     print(err)
 x must be greater than 0
 
-testing integer_validator with None
-::
->>> try:
-...     bg.integer_validator(None, None)
-... except Exception as err:
-...     print(err)
-None must be an integer
-
-testing integer_validator method with TypeError boolean
-::
->>> try:
-...     bg.integer_validator("x", True)
-... except Exception as err:
-...     print(err)
-
 testing integer_validator method with no arguments
 ::
 >>> try:
@@ -114,3 +107,11 @@ testing integer_validator method with only one argument
 ... except Exception as err:
 ...     print(err)
 BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+testing integer_validator with None
+::
+>>> try:
+...     bg.integer_validator(None, None)
+... except Exception as err:
+...     print(err)
+None must be an integer
