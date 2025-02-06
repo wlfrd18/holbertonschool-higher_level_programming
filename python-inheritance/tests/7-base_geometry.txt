@@ -41,8 +41,8 @@ TypeError: bool_value must be an integer
 >>> base_geometry.integer_validator()
 Traceback (most recent call last):
     ...
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+TypeError: None must be an integer
 >>> base_geometry.integer_validator("name")
 Traceback (most recent call last):
     ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+TypeError: name must be an integer
