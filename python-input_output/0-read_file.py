@@ -2,7 +2,7 @@
 """Module containing read_file function"""
 
 
-def read_file(filename="")
+def read_file(filename=""):
     """The read_file function"""
 
     # openning and reading file
