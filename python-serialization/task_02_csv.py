@@ -14,17 +14,17 @@ def convert_csv_to_json(filename):
         with open(filename, 'r') as file:
             reader = csv.DictReader(file)
 
-            # changing content to list
+            # Changing content to list
             data = list(reader)
 
-        # writing content as JSON to the file
+        # Writing content as JSON to the file
         json_filename = 'data.json'
         with open(json_filename, 'w') as file:
             json.dump(data, file, indent=4)
             return True
 
     # Exception handlind
-    exccept Exception as e:
+    except Exception as e:
         print("An error occured:", e)
         return False
 
