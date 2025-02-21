@@ -81,7 +81,7 @@ def add_user():
 def jwt_protected():
     # Get the identity (username) from the current JWT token
     current_user = get_jwt_identity()
-    return jsonify(message="JWT Auth: Access Granted", user=current_user)
+    return jsonify(message="JWT Auth: Access Granted")
 
 # Route protected by JWT Authentication and Role-based access control
 @app.route('/admin-only', methods=['GET'])
