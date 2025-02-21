@@ -19,9 +19,15 @@ users = {}
 # Basic Authentication: Verify the username and password
 @auth.verify_password
 def verify_password(username, password):
-    # Check if the user exists and if the password is correct
-    if username in users and check_password_hash(users[username]['password'], password):
-        return username  # Return the username if credentials are valid
+    if username in users:
+        print(f"User {username} found in users dictionary.")
+        if check_password_hash(users[username]['password'], password):
+            return username  # Return the username if credentials are valid
+        else:
+            print("Incorrect password.")
+    else:
+        print(f"User {username} not found.")
+    return None
 
 # Route protected by Basic Authentication
 @app.route('/basic-protected', methods=['GET'])
