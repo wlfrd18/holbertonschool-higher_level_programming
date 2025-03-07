@@ -1,26 +1,29 @@
 #!/usr/bin/python3
-"""
-This script lists all states with
-a `name` starting with the letter `N`
-from the database `hbtn_0e_0_usa`.
-"""
-
+'''
+This module  lists all states starting with N from the database hbtn_0e_0_usa
+'''
 import MySQLdb
-from sys import argv
+import sys
 
-if __name__ == '__main__':
-    """
-    Access to the database and get the states
-    from the database.
-    """
-    db = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
-                         passwd=argv[2], db=argv[3])
+if __name__ == "__main__":
 
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states \
-                 WHERE name LIKE BINARY 'N%' \
-                 ORDER BY states.id ASC")
-    rows = cur.fetchall()
+    if len(sys.argv) != 4:
+        exit(1)
 
-    for row in rows:
-        print(row)
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=username, passwd=password, db=database)
+    cursor = db.cursor()
+    cursor.execute("SELECT DISTINCT * FROM states "
+                   "WHERE name LIKE 'N%' "
+                   "ORDER BY id ASC")
+    states = cursor.fetchall()
+
+    for state in states:
+        print(state)
+
+    cursor.close()
+    db.close()
