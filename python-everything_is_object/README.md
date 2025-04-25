@@ -1,3 +1,5 @@
+<a href="https://zupimages.net/viewer.php?id=25/17/4mf5.png"><img src="https://zupimages.net/up/25/17/4mf5.png" alt="" /></a>
+
 # Understanding Mutable and Immutable Objects in Python
 
 ## 1) Introduction
@@ -9,6 +11,7 @@ In this blog, we will explore what mutable and immutable objects are, how they b
 ---
 
 ## 2) Id and Type
+<a href="https://zupimages.net/viewer.php?id=25/17/69k1.png"><img src="https://zupimages.net/up/25/17/69k1.png" alt="" /></a> 
 
 Every object in Python has two essential attributes: its **type** and its **identity**.
 
@@ -49,6 +52,7 @@ print(a == b)  # True: Same value
 print(a is b)  # False: Different objects
 ````
 ## 3) Mutable Objects
+<a href="https://zupimages.net/viewer.php?id=25/17/ijv4.png"><img src="https://zupimages.net/up/25/17/ijv4.png" alt="" /></a> 
 
 Mutable objects are objects whose content can be changed after their creation without creating a new object. Common mutable objects include lists, dictionaries, and sets.
 
@@ -71,6 +75,7 @@ print(b)  # [1, 2, 3]
 print(a is b)  # False: a and b now point to different objects
 ````
 ## 4) Immutable Objects
+<a href="https://ibb.co/KzpJzsYC"><img src="https://i.ibb.co/FqLFqY9G/84-AD8-C9-E-6048-47-FC-876-F-64885-D1-F6-DA3.png" alt="84-AD8-C9-E-6048-47-FC-876-F-64885-D1-F6-DA3" border="0"></a>  
 
 Immutable objects cannot be modified once created. Examples of immutable objects in Python include strings, tuples, and integers. Any operation that seems like a modification actually creates a new object.
 
@@ -122,6 +127,7 @@ increment(a)
 print(a)  # 10, the original value of a remains unchanged
 ````
 ## 6) How Arguments Are Passed to Functions
+<a href="https://zupimages.net/viewer.php?id=25/17/dmek.png"><img src="https://zupimages.net/up/25/17/dmek.png" alt="" /></a> 
 
 Python uses pass-by-object-reference, meaning it passes the reference to the object, not the actual object itself. This is important because:
 
@@ -147,35 +153,7 @@ a = 10
 increment(a)
 print(a)  # 10, the original value of a remains unchanged
 ````
-## 7) Python Interning and Singleton
 
-Python has a concept of interning where certain objects are stored in memory once and reused. This is common for small integers (from -5 to 256) and certain strings. This behavior helps with memory efficiency and improves performance.
-````python
-a = 100
-b = 100
-print(a is b)  # True, because small integers are cached
-````
-However, larger integers are not interned:
-````python
-a = 257
-b = 257
-print(a is b)  # False, because 257 is not in the cached range
-````
-Singletons refer to values where only one instance exists in memory. Some examples are None, True, False, and empty tuples ().
-````python
-a = ()
-b = ()
-print(a is b)  # True, because empty tuples are singleton objects in memory
-````
-## 8) Garbage Collector
-
-Python automatically manages memory through the garbage collector (GC). When an object is no longer referenced, Python will remove it from memory. This is especially important for large programs where memory management becomes critical.
-
-For example, when a new list is created by modifying an existing list, the old list becomes unreferenced and eligible for garbage collection:
-````python
-l1 = [1, 2, 3]
-l1 = l1 + [4]  # l1 points to a new list, old list is unreferenced
-````
 ## Conclusion
 
 In this blog, we've explored the differences between mutable and immutable objects in Python. Understanding how these objects are managed in memory and how they behave when passed to functions or assigned to new variables is essential for writing efficient, bug-free code. By knowing how Python handles object identity and mutability, you can avoid common pitfalls and make more predictable decisions in your code.
